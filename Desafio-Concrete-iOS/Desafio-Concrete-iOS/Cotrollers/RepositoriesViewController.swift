@@ -12,8 +12,12 @@ private let cellIdentifier = "repositorieCell"
 
 class RepositoriesViewController: UIViewController {
 
+  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(Api.URL.forPage(page: 33))
 
     }
 

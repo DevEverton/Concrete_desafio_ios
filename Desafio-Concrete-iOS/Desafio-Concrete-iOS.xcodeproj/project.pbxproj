@@ -15,6 +15,8 @@
 		50F39A75200EEEED00C3A62F /* RepositorieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F39A74200EEEED00C3A62F /* RepositorieCell.swift */; };
 		50F39A77200EFDC300C3A62F /* PullRequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F39A76200EFDC300C3A62F /* PullRequestsViewController.swift */; };
 		50F39A79200F00CB00C3A62F /* RoundedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F39A78200F00CB00C3A62F /* RoundedImage.swift */; };
+		50F39A7B200FA54F00C3A62F /* ApiUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F39A7A200FA54F00C3A62F /* ApiUrl.swift */; };
+		51906E2A2A990847904905A8 /* Pods_Desafio_Concrete_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F4C5709607D0C0D94DC675 /* Pods_Desafio_Concrete_iOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,10 @@
 		50F39A74200EEEED00C3A62F /* RepositorieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositorieCell.swift; sourceTree = "<group>"; };
 		50F39A76200EFDC300C3A62F /* PullRequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullRequestsViewController.swift; sourceTree = "<group>"; };
 		50F39A78200F00CB00C3A62F /* RoundedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImage.swift; sourceTree = "<group>"; };
+		50F39A7A200FA54F00C3A62F /* ApiUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiUrl.swift; sourceTree = "<group>"; };
+		6A689B056B232C25879A49C4 /* Pods-Desafio-Concrete-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio-Concrete-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Desafio-Concrete-iOS/Pods-Desafio-Concrete-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		826B8CC6FF8B6943B19B8E24 /* Pods-Desafio-Concrete-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio-Concrete-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Desafio-Concrete-iOS/Pods-Desafio-Concrete-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		D4F4C5709607D0C0D94DC675 /* Pods_Desafio_Concrete_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Desafio_Concrete_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51906E2A2A990847904905A8 /* Pods_Desafio_Concrete_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +53,8 @@
 			children = (
 				50F39A35200EA8BF00C3A62F /* Desafio-Concrete-iOS */,
 				50F39A34200EA8BF00C3A62F /* Products */,
+				773E2F83B21237832BE06AA7 /* Pods */,
+				B47DB3BF941EDA2FEF1D2503 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,6 +99,7 @@
 		50F39A4A200EB40300C3A62F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				50F39A7A200FA54F00C3A62F /* ApiUrl.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -105,6 +115,23 @@
 			path = SuportFiles;
 			sourceTree = "<group>";
 		};
+		773E2F83B21237832BE06AA7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				826B8CC6FF8B6943B19B8E24 /* Pods-Desafio-Concrete-iOS.debug.xcconfig */,
+				6A689B056B232C25879A49C4 /* Pods-Desafio-Concrete-iOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B47DB3BF941EDA2FEF1D2503 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D4F4C5709607D0C0D94DC675 /* Pods_Desafio_Concrete_iOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -112,9 +139,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50F39A45200EA8C000C3A62F /* Build configuration list for PBXNativeTarget "Desafio-Concrete-iOS" */;
 			buildPhases = (
+				70C42D0849BA89C7A9328F01 /* [CP] Check Pods Manifest.lock */,
 				50F39A2F200EA8BF00C3A62F /* Sources */,
 				50F39A30200EA8BF00C3A62F /* Frameworks */,
 				50F39A31200EA8BF00C3A62F /* Resources */,
+				24E9FCA48D4F33FD7C1B27E6 /* [CP] Embed Pods Frameworks */,
+				779050021D1D133EBCD79BEB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -172,6 +202,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		24E9FCA48D4F33FD7C1B27E6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Desafio-Concrete-iOS/Pods-Desafio-Concrete-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		70C42D0849BA89C7A9328F01 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		779050021D1D133EBCD79BEB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Desafio-Concrete-iOS/Pods-Desafio-Concrete-iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		50F39A2F200EA8BF00C3A62F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -179,6 +257,7 @@
 			files = (
 				50F39A73200EECF000C3A62F /* RepositoriesViewController.swift in Sources */,
 				50F39A37200EA8BF00C3A62F /* AppDelegate.swift in Sources */,
+				50F39A7B200FA54F00C3A62F /* ApiUrl.swift in Sources */,
 				50F39A79200F00CB00C3A62F /* RoundedImage.swift in Sources */,
 				50F39A77200EFDC300C3A62F /* PullRequestsViewController.swift in Sources */,
 				50F39A75200EEEED00C3A62F /* RepositorieCell.swift in Sources */,
@@ -316,11 +395,13 @@
 		};
 		50F39A46200EA8C000C3A62F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 826B8CC6FF8B6943B19B8E24 /* Pods-Desafio-Concrete-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TK5Y26D53T;
 				INFOPLIST_FILE = "Desafio-Concrete-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "EvertonCarneiro.Desafio-Concrete-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -331,11 +412,13 @@
 		};
 		50F39A47200EA8C000C3A62F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A689B056B232C25879A49C4 /* Pods-Desafio-Concrete-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TK5Y26D53T;
 				INFOPLIST_FILE = "Desafio-Concrete-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "EvertonCarneiro.Desafio-Concrete-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
