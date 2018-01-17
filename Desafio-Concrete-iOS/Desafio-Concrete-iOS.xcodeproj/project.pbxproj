@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		50F39A37200EA8BF00C3A62F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F39A36200EA8BF00C3A62F /* AppDelegate.swift */; };
-		50F39A39200EA8BF00C3A62F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F39A38200EA8BF00C3A62F /* ViewController.swift */; };
 		50F39A3C200EA8BF00C3A62F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50F39A3A200EA8BF00C3A62F /* Main.storyboard */; };
 		50F39A3E200EA8BF00C3A62F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50F39A3D200EA8BF00C3A62F /* Assets.xcassets */; };
 		50F39A41200EA8BF00C3A62F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50F39A3F200EA8BF00C3A62F /* LaunchScreen.storyboard */; };
+		50F39A73200EECF000C3A62F /* RepositoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F39A72200EECF000C3A62F /* RepositoriesViewController.swift */; };
+		50F39A75200EEEED00C3A62F /* RepositorieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F39A74200EEEED00C3A62F /* RepositorieCell.swift */; };
+		50F39A77200EFDC300C3A62F /* PullRequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F39A76200EFDC300C3A62F /* PullRequestsViewController.swift */; };
+		50F39A79200F00CB00C3A62F /* RoundedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F39A78200F00CB00C3A62F /* RoundedImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		50F39A33200EA8BF00C3A62F /* Desafio-Concrete-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Desafio-Concrete-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50F39A36200EA8BF00C3A62F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		50F39A38200EA8BF00C3A62F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		50F39A3B200EA8BF00C3A62F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		50F39A3D200EA8BF00C3A62F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50F39A40200EA8BF00C3A62F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50F39A42200EA8C000C3A62F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50F39A72200EECF000C3A62F /* RepositoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewController.swift; sourceTree = "<group>"; };
+		50F39A74200EEEED00C3A62F /* RepositorieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositorieCell.swift; sourceTree = "<group>"; };
+		50F39A76200EFDC300C3A62F /* PullRequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullRequestsViewController.swift; sourceTree = "<group>"; };
+		50F39A78200F00CB00C3A62F /* RoundedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,49 @@
 		50F39A35200EA8BF00C3A62F /* Desafio-Concrete-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				50F39A36200EA8BF00C3A62F /* AppDelegate.swift */,
-				50F39A38200EA8BF00C3A62F /* ViewController.swift */,
-				50F39A3A200EA8BF00C3A62F /* Main.storyboard */,
-				50F39A3D200EA8BF00C3A62F /* Assets.xcassets */,
-				50F39A3F200EA8BF00C3A62F /* LaunchScreen.storyboard */,
 				50F39A42200EA8C000C3A62F /* Info.plist */,
+				50F39A4B200EB43C00C3A62F /* SuportFiles */,
+				50F39A4A200EB40300C3A62F /* Models */,
+				50F39A49200EB3FA00C3A62F /* Views */,
+				50F39A48200EB3EE00C3A62F /* Cotrollers */,
 			);
 			path = "Desafio-Concrete-iOS";
+			sourceTree = "<group>";
+		};
+		50F39A48200EB3EE00C3A62F /* Cotrollers */ = {
+			isa = PBXGroup;
+			children = (
+				50F39A72200EECF000C3A62F /* RepositoriesViewController.swift */,
+				50F39A74200EEEED00C3A62F /* RepositorieCell.swift */,
+				50F39A76200EFDC300C3A62F /* PullRequestsViewController.swift */,
+			);
+			path = Cotrollers;
+			sourceTree = "<group>";
+		};
+		50F39A49200EB3FA00C3A62F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				50F39A78200F00CB00C3A62F /* RoundedImage.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		50F39A4A200EB40300C3A62F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		50F39A4B200EB43C00C3A62F /* SuportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				50F39A36200EA8BF00C3A62F /* AppDelegate.swift */,
+				50F39A3A200EA8BF00C3A62F /* Main.storyboard */,
+				50F39A3F200EA8BF00C3A62F /* LaunchScreen.storyboard */,
+				50F39A3D200EA8BF00C3A62F /* Assets.xcassets */,
+			);
+			path = SuportFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +177,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50F39A39200EA8BF00C3A62F /* ViewController.swift in Sources */,
+				50F39A73200EECF000C3A62F /* RepositoriesViewController.swift in Sources */,
 				50F39A37200EA8BF00C3A62F /* AppDelegate.swift in Sources */,
+				50F39A79200F00CB00C3A62F /* RoundedImage.swift in Sources */,
+				50F39A77200EFDC300C3A62F /* PullRequestsViewController.swift in Sources */,
+				50F39A75200EEEED00C3A62F /* RepositorieCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
