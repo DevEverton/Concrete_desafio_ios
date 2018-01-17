@@ -15,7 +15,7 @@ class Api {
     
     private init() {}
     
-    func forPage(page: Int) -> String {
+    func forPage(_ page: Int) -> String {
         
         return url + String(page)
     }

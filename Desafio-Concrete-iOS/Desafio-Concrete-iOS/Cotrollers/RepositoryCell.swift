@@ -1,5 +1,5 @@
 //
-//  RepositorieCell.swift
+//  RepositoryCell.swift
 //  Desafio-Concrete-iOS
 //
 //  Created by Everton Carneiro on 16/01/18.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class RepositorieCell: UITableViewCell {
+class RepositoryCell: UITableViewCell {
     
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
-    @IBOutlet weak var userFullName: UILabel!
+    @IBOutlet weak var fullName: UILabel!
     @IBOutlet weak var repositoryName: UILabel!
     @IBOutlet weak var repositoryDescription: UILabel!
     @IBOutlet weak var forks: UILabel!

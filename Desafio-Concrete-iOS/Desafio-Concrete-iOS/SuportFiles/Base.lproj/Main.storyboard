@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -28,7 +29,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="repositorieCell" rowHeight="150" id="eXC-ho-yfA" customClass="RepositorieCell" customModule="Desafio_Concrete_iOS" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="repositorieCell" rowHeight="150" id="eXC-ho-yfA" customClass="RepositoryCell" customModule="Desafio_Concrete_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eXC-ho-yfA" id="cBI-GH-b2H">
@@ -43,16 +44,16 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="9fZ-qJ-4KQ">
-                                                    <rect key="frame" x="110" y="21" width="240" height="40.5"/>
+                                                    <rect key="frame" x="110" y="21" width="240" height="64"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do repositório" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hmf-ni-5wh">
-                                                            <rect key="frame" x="0.0" y="0.0" width="153.5" height="20"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Nome do repositório" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hmf-ni-5wh">
+                                                            <rect key="frame" x="0.0" y="0.0" width="153.5" height="43.5"/>
                                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                             <color key="textColor" red="0.19215686269999999" green="0.49803921569999998" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrição do repositório" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKI-sw-jpc">
-                                                            <rect key="frame" x="0.0" y="22" width="0.0" height="18.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrição do repositório" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DKI-sw-jpc">
+                                                            <rect key="frame" x="0.0" y="45.5" width="0.0" height="18.5"/>
                                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                                             <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -127,16 +128,17 @@
                                                 <constraint firstItem="9fZ-qJ-4KQ" firstAttribute="top" secondItem="cBI-GH-b2H" secondAttribute="topMargin" constant="10" id="SAe-Pr-J5w"/>
                                                 <constraint firstItem="jKK-Hk-o60" firstAttribute="trailing" secondItem="cBI-GH-b2H" secondAttribute="trailingMargin" id="Sjd-V4-ii2"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="9fZ-qJ-4KQ" secondAttribute="trailing" constant="10" id="aXU-I6-6Qq"/>
+                                                <constraint firstItem="8QG-p5-1PR" firstAttribute="top" secondItem="9fZ-qJ-4KQ" secondAttribute="bottom" constant="10" id="igt-ke-IkB"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="8QG-p5-1PR" secondAttribute="bottom" constant="0.5" id="rJh-z1-ycw"/>
                                                 <constraint firstItem="9fZ-qJ-4KQ" firstAttribute="leading" secondItem="GhC-3s-4vP" secondAttribute="trailing" constant="20" id="u9j-u4-ozD"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="forks" destination="2SU-ie-ddf" id="bt5-yY-Pmb"/>
+                                            <outlet property="fullName" destination="IkJ-OS-hrn" id="rqQ-Av-SVw"/>
                                             <outlet property="repositoryDescription" destination="DKI-sw-jpc" id="lB0-p5-2Os"/>
                                             <outlet property="repositoryName" destination="Hmf-ni-5wh" id="Jjc-re-vES"/>
                                             <outlet property="stars" destination="CoZ-AW-zxl" id="wGs-17-qr3"/>
-                                            <outlet property="userFullName" destination="IkJ-OS-hrn" id="uLt-H1-12y"/>
                                             <outlet property="userImage" destination="GhC-3s-4vP" id="vep-vG-kKX"/>
                                             <outlet property="userName" destination="BiS-dM-Jg0" id="rA7-eD-c65"/>
                                         </connections>
@@ -161,6 +163,7 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="At8-Gd-W7J"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="tableView" destination="uwn-Of-ceX" id="WHf-GE-auB"/>
                         <segue destination="6se-6p-2h3" kind="show" identifier="gotoPR" id="UBJ-9D-jfy"/>
                     </connections>
                 </viewController>

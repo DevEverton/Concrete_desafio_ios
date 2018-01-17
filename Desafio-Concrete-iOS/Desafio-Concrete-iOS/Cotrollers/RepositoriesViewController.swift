@@ -7,18 +7,28 @@
 //
 
 import UIKit
+import AlamofireImage
 
 private let cellIdentifier = "repositorieCell"
 
 class RepositoriesViewController: UIViewController {
 
   
+    @IBOutlet weak var tableView: UITableView!
+    var repositories = [Repository]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(Api.URL.forPage(page: 33))
-
+        let apiCall = APIManager.shared.fetchRepositoriesOfPage(1)
+        let _ = apiCall.then {
+            repositories -> Void in
+            self.repositories = repositories
+            self.tableView.reloadData()
+            }.catch { error -> Void in
+                
+            }
     }
 
 
@@ -31,15 +41,21 @@ extension RepositoriesViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return repositories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let repositoryCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RepositorieCell
+        let repositoryCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RepositoryCell
         
-        repositoryCell.backgroundColor = .white
-        repositoryCell.userImage.image = #imageLiteral(resourceName: "user-Big").circle
-        
+        repositoryCell.userName.text = repositories[indexPath.row].user?.name
+        repositoryCell.fullName.text = repositories[indexPath.row].fullName
+        repositoryCell.repositoryName.text = repositories[indexPath.row].name
+        repositoryCell.repositoryDescription.text = repositories[indexPath.row].description
+        repositoryCell.forks.text = String(describing: repositories[indexPath.row].forks!)
+        repositoryCell.stars.text = String(describing: repositories[indexPath.row].stars!)
+        let url = URL(string: (repositories[indexPath.row].user?.pictureUrl!)!)
+        repositoryCell.userImage.af_setImage(withURL: url!)
+
         return repositoryCell
     }
     
