@@ -16,6 +16,7 @@ class RepositoriesViewController: UIViewController {
   
     @IBOutlet weak var tableView: UITableView!
     var repositories = [Repository]()
+    var activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .white)
     
     
     override func viewDidLoad() {
@@ -26,9 +27,15 @@ class RepositoriesViewController: UIViewController {
             repositories -> Void in
             self.repositories = repositories
             self.tableView.reloadData()
+            self.activityIndicator.stopAnimating()
             }.catch { error -> Void in
                 
             }
+        addActivityIndicator(activityIndicator)
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        activityIndicator.startAnimating()
     }
 
 
@@ -54,7 +61,7 @@ extension RepositoriesViewController: UITableViewDataSource, UITableViewDelegate
         repositoryCell.forks.text = String(describing: repositories[indexPath.row].forks!)
         repositoryCell.stars.text = String(describing: repositories[indexPath.row].stars!)
         let url = URL(string: (repositories[indexPath.row].user?.pictureUrl!)!)
-        repositoryCell.userImage.af_setImage(withURL: url!)
+        repositoryCell.userImage.af_setImage(withURL: url!) 
 
         return repositoryCell
     }

@@ -36,24 +36,29 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user-Big" translatesAutoresizingMaskIntoConstraints="NO" id="GhC-3s-4vP">
-                                                    <rect key="frame" x="15" y="10" width="75" height="75"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user-Big" translatesAutoresizingMaskIntoConstraints="NO" id="GhC-3s-4vP" customClass="RoundedView" customModule="Desafio_Concrete_iOS" customModuleProvider="target">
+                                                    <rect key="frame" x="15" y="10" width="70" height="70"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="75" id="FoE-BH-ena"/>
-                                                        <constraint firstAttribute="height" constant="75" id="te0-xf-iIR"/>
+                                                        <constraint firstAttribute="width" constant="70" id="FoE-BH-ena"/>
+                                                        <constraint firstAttribute="height" constant="70" id="te0-xf-iIR"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="35"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="9fZ-qJ-4KQ">
-                                                    <rect key="frame" x="110" y="21" width="240" height="64"/>
+                                                    <rect key="frame" x="105" y="21" width="245" height="59"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Nome do repositório" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hmf-ni-5wh">
-                                                            <rect key="frame" x="0.0" y="0.0" width="153.5" height="43.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="153.5" height="38.5"/>
                                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                             <color key="textColor" red="0.19215686269999999" green="0.49803921569999998" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrição do repositório" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DKI-sw-jpc">
-                                                            <rect key="frame" x="0.0" y="45.5" width="0.0" height="18.5"/>
+                                                            <rect key="frame" x="0.0" y="40.5" width="0.0" height="18.5"/>
                                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                                             <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -61,16 +66,16 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="8QG-p5-1PR">
-                                                    <rect key="frame" x="15" y="95" width="121" height="43.5"/>
+                                                    <rect key="frame" x="15" y="90" width="230" height="48.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Everton" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BiS-dM-Jg0">
-                                                            <rect key="frame" x="0.0" y="0.0" width="59" height="23"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="59" height="28"/>
                                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                             <color key="textColor" red="0.19215686274509802" green="0.49803921568627452" blue="0.79607843137254897" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Everton Carneiro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IkJ-OS-hrn">
-                                                            <rect key="frame" x="0.0" y="25" width="121" height="18.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Everton Carneiro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="IkJ-OS-hrn">
+                                                            <rect key="frame" x="0.0" y="30" width="121" height="18.5"/>
                                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                                             <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -121,6 +126,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="GhC-3s-4vP" firstAttribute="top" secondItem="cBI-GH-b2H" secondAttribute="top" constant="10" id="2mc-gX-ABk"/>
+                                                <constraint firstItem="jKK-Hk-o60" firstAttribute="leading" secondItem="8QG-p5-1PR" secondAttribute="trailing" constant="10" id="59R-bi-Rqr"/>
                                                 <constraint firstItem="jKK-Hk-o60" firstAttribute="bottom" secondItem="cBI-GH-b2H" secondAttribute="bottomMargin" id="IUr-3i-Sgg"/>
                                                 <constraint firstItem="GhC-3s-4vP" firstAttribute="leading" secondItem="cBI-GH-b2H" secondAttribute="leading" constant="15" id="J85-SF-9FO"/>
                                                 <constraint firstItem="8QG-p5-1PR" firstAttribute="leading" secondItem="cBI-GH-b2H" secondAttribute="leadingMargin" id="MJH-zd-nLf"/>

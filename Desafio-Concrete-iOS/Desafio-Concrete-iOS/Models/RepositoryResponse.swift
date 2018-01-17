@@ -41,7 +41,6 @@ class Repository: Mappable {
         forks <- map["forks_count"]
         user <- map["owner"]
     }
-    
 }
 
 class User: Mappable {
