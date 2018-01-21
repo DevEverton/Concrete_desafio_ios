@@ -11,13 +11,17 @@ import Foundation
 class Api {
     
     static var URL = Api()
-    var url = "https://api.github.com/search/repositories?q=language:Java&sort=stars&page="
     
     private init() {}
     
     func forPage(_ page: Int) -> String {
-        
-        return url + String(page)
+        let repoUrl = "https://api.github.com/search/repositories?q=language:Java&sort=stars&page="
+        return repoUrl + String(page)
+    }
+    
+    func forPullrequests(creator: String, repository: String) -> String{
+        let pullRequestsUrl = "https://api.github.com/repos/\(creator)/\(repository)/pulls"
+        return pullRequestsUrl
     }
 
 }

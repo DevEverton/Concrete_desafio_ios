@@ -9,10 +9,14 @@
 import UIKit
 
 class PullRequestsViewController: UIViewController {
+    
+    var url = String()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.tintColor = .white
+        
+        print("THE URL IS FUCK: ", url)
     }
 
 

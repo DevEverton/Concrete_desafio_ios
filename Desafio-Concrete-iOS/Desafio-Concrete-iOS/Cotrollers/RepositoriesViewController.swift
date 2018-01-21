@@ -16,6 +16,7 @@ class RepositoriesViewController: UIViewController {
   
     @IBOutlet weak var tableView: UITableView!
     var repositories = [Repository]()
+    var pullRequestsUrl = String()
     var activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .white)
     
     
@@ -32,12 +33,10 @@ class RepositoriesViewController: UIViewController {
                 
             }
         addActivityIndicator(activityIndicator)
+        activityIndicator.startAnimating()
+
         
     }
-    override func viewDidAppear(_ animated: Bool) {
-        activityIndicator.startAnimating()
-    }
-
 
 }
 
@@ -67,7 +66,11 @@ extension RepositoriesViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "gotoPR", sender: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let destination = storyboard.instantiateViewController(withIdentifier: "PullRequestsVC") as! PullRequestsViewController
+
+        destination.url = Api.URL.forPullrequests(creator: (repositories[indexPath.row].user?.name)!, repository: repositories[indexPath.row].name!)
+        self.navigationController?.pushViewController(destination, animated: true)
     }
     
 }

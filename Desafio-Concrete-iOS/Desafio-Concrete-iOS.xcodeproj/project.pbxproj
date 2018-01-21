@@ -19,6 +19,7 @@
 		50F39A7D200FCC1F00C3A62F /* RepositoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F39A7C200FCC1F00C3A62F /* RepositoryResponse.swift */; };
 		50F39A7F200FD3A100C3A62F /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F39A7E200FD3A100C3A62F /* APIManager.swift */; };
 		50F39A82200FE6D000C3A62F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F39A81200FE6D000C3A62F /* Extensions.swift */; };
+		50F39ACC2012B8DB00C3A62F /* PullRequestsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F39ACB2012B8DB00C3A62F /* PullRequestsResponse.swift */; };
 		51906E2A2A990847904905A8 /* Pods_Desafio_Concrete_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F4C5709607D0C0D94DC675 /* Pods_Desafio_Concrete_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		50F39A7C200FCC1F00C3A62F /* RepositoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryResponse.swift; sourceTree = "<group>"; };
 		50F39A7E200FD3A100C3A62F /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		50F39A81200FE6D000C3A62F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		50F39ACB2012B8DB00C3A62F /* PullRequestsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullRequestsResponse.swift; sourceTree = "<group>"; };
 		6A689B056B232C25879A49C4 /* Pods-Desafio-Concrete-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio-Concrete-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Desafio-Concrete-iOS/Pods-Desafio-Concrete-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		826B8CC6FF8B6943B19B8E24 /* Pods-Desafio-Concrete-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio-Concrete-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Desafio-Concrete-iOS/Pods-Desafio-Concrete-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		D4F4C5709607D0C0D94DC675 /* Pods_Desafio_Concrete_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Desafio_Concrete_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +110,7 @@
 			children = (
 				50F39A7A200FA54F00C3A62F /* ApiUrl.swift */,
 				50F39A7C200FCC1F00C3A62F /* RepositoryResponse.swift */,
+				50F39ACB2012B8DB00C3A62F /* PullRequestsResponse.swift */,
 				50F39A7E200FD3A100C3A62F /* APIManager.swift */,
 			);
 			path = Models;
@@ -277,6 +280,7 @@
 				50F39A73200EECF000C3A62F /* RepositoriesViewController.swift in Sources */,
 				50F39A37200EA8BF00C3A62F /* AppDelegate.swift in Sources */,
 				50F39A7B200FA54F00C3A62F /* ApiUrl.swift in Sources */,
+				50F39ACC2012B8DB00C3A62F /* PullRequestsResponse.swift in Sources */,
 				50F39A7D200FCC1F00C3A62F /* RepositoryResponse.swift in Sources */,
 				50F39A79200F00CB00C3A62F /* RoundedImage.swift in Sources */,
 				50F39A77200EFDC300C3A62F /* PullRequestsViewController.swift in Sources */,
