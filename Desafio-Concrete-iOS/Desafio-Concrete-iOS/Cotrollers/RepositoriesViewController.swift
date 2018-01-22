@@ -18,12 +18,13 @@ class RepositoriesViewController: UIViewController {
     var repositories = [Repository]()
     var pullRequestsUrl = String()
     var activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .white)
-    
+    var page = 1
+    var apiCall = APIManager.shared.fetchRepositoriesOfPage(1)
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let apiCall = APIManager.shared.fetchRepositoriesOfPage(1)
         let _ = apiCall.then {
             repositories -> Void in
             self.repositories = repositories
@@ -65,11 +66,36 @@ extension RepositoriesViewController: UITableViewDataSource, UITableViewDelegate
         return repositoryCell
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let lastElement = repositories.count - 1
+        if indexPath.row == lastElement {
+            
+            apiCall = APIManager.shared.fetchRepositoriesOfPage(page + 1)
+            
+            let _ = apiCall.then {
+                repositories -> Void in
+                self.repositories += repositories
+                self.tableView.reloadData()
+                self.activityIndicator.stopAnimating()
+                }.catch { error -> Void in
+                    
+            }
+            addActivityIndicator(activityIndicator)
+            activityIndicator.startAnimating()
+        }
+    }
+    
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let destination = storyboard.instantiateViewController(withIdentifier: "PullRequestsVC") as! PullRequestsViewController
 
-        destination.url = Api.URL.forPullrequests(creator: (repositories[indexPath.row].user?.name)!, repository: repositories[indexPath.row].name!)
+        
+        if let creator = repositories[indexPath.row].user?.name, let repoName = repositories[indexPath.row].name {
+            destination.repoCreator = creator
+            destination.repoName = repoName
+        }
+        
         self.navigationController?.pushViewController(destination, animated: true)
     }
     

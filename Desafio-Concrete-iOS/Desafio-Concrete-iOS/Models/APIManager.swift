@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 import PromiseKit
+import ObjectMapper
 
 class APIManager {
     
@@ -24,12 +25,10 @@ class APIManager {
                 response in
                 switch(response.result) {
                 case .success(let responseString):
-                    print(responseString)
                     if let repositoryResponse = RepositoryResponse(JSONString: String(responseString)){
                         fullfil(repositoryResponse.repositories!)
                     }
                 case .failure(let error):
-                    print(error)
                     reject(error)
                 }
             }
@@ -37,4 +36,38 @@ class APIManager {
         }
         
     }
+    
+    func fetchPullRequestsOf(_ repository: String, by creator: String ) -> Promise<[Pull]> {
+        
+        return Promise<[Pull]> {
+            fullfil, reject -> Void in
+            return Alamofire.request(Api.URL.forPullrequests(creator: creator, repository: repository)).responseString {
+                response in
+                switch(response.result) {
+                case .success(let responseString):
+                    print("The response is: ", responseString)
+
+                    if let pullRequestResponse = PullRequestResponse(JSONString: String(responseString)){
+                        fullfil(pullRequestResponse.pulls!)
+
+                    }
+                case .failure(let error):
+                    print(error)
+                    reject(error)
+                }
+            }
+        }
+ 
+    }
+
+    
+    
 }
+
+
+
+
+
+
+
+

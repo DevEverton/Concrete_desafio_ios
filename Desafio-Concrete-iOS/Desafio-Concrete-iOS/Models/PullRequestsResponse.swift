@@ -9,8 +9,10 @@
 import Foundation
 import ObjectMapper
 
+
+
 class PullRequestResponse: Mappable {
-    
+
     var pulls: [Pull]?
     
     required init?(map: Map) {}
@@ -18,6 +20,8 @@ class PullRequestResponse: Mappable {
     func mapping(map: Map) {
         pulls <- map
     }
+    
+    
 }
 
 class Pull: Mappable{
@@ -25,7 +29,7 @@ class Pull: Mappable{
     var creator: Creator?
     var title: String?
     var body: String?
-    var date: Date?
+    var date: String?
     
     
     required init?(map: Map) {}
