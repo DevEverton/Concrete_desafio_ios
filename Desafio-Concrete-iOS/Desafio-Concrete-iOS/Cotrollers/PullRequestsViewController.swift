@@ -24,7 +24,7 @@ class PullRequestsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.tintColor = .white
-        
+                
         let apiCall = APIManager.shared.fetchPullRequestsOf(repoName, by: repoCreator)
         
         let _ = apiCall.then {
@@ -35,11 +35,9 @@ class PullRequestsViewController: UIViewController {
             }.catch { error -> Void in
                 
             }
-        
         addActivityIndicator(activityIndicator)
         activityIndicator.startAnimating()
     }
-
 
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50C1D96E201922DA00E29FB3 /* PullCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C1D96D201922DA00E29FB3 /* PullCell.swift */; };
 		50F39A37200EA8BF00C3A62F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F39A36200EA8BF00C3A62F /* AppDelegate.swift */; };
 		50F39A3C200EA8BF00C3A62F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50F39A3A200EA8BF00C3A62F /* Main.storyboard */; };
 		50F39A3E200EA8BF00C3A62F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50F39A3D200EA8BF00C3A62F /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		50C1D96D201922DA00E29FB3 /* PullCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullCell.swift; sourceTree = "<group>"; };
 		50F39A33200EA8BF00C3A62F /* Desafio-Concrete-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Desafio-Concrete-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50F39A36200EA8BF00C3A62F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50F39A3B200EA8BF00C3A62F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				50F39A72200EECF000C3A62F /* RepositoriesViewController.swift */,
 				50F39A74200EEEED00C3A62F /* RepositoryCell.swift */,
 				50F39A76200EFDC300C3A62F /* PullRequestsViewController.swift */,
+				50C1D96D201922DA00E29FB3 /* PullCell.swift */,
 			);
 			path = Cotrollers;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				50F39A73200EECF000C3A62F /* RepositoriesViewController.swift in Sources */,
 				50F39A37200EA8BF00C3A62F /* AppDelegate.swift in Sources */,
 				50F39A7B200FA54F00C3A62F /* ApiUrl.swift in Sources */,
+				50C1D96E201922DA00E29FB3 /* PullCell.swift in Sources */,
 				50F39ACC2012B8DB00C3A62F /* PullRequestsResponse.swift in Sources */,
 				50F39A7D200FCC1F00C3A62F /* RepositoryResponse.swift in Sources */,
 				50F39A79200F00CB00C3A62F /* RoundedImage.swift in Sources */,

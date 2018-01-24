@@ -44,12 +44,9 @@ class APIManager {
             return Alamofire.request(Api.URL.forPullrequests(creator: creator, repository: repository)).responseString {
                 response in
                 switch(response.result) {
-                case .success(let responseString):
-                    print("The response is: ", responseString)
-
-                    if let pullRequestResponse = PullRequestResponse(JSONString: String(responseString)){
-                        fullfil(pullRequestResponse.pulls!)
-
+                case .success:
+                    if let pullsArray: Array<Pull> = Mapper<Pull>().mapArray(JSONString: response.result.value!) {
+                        fullfil(pullsArray)
                     }
                 case .failure(let error):
                     print(error)
@@ -57,7 +54,7 @@ class APIManager {
                 }
             }
         }
- 
+        
     }
 
     

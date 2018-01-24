@@ -10,20 +10,6 @@ import Foundation
 import ObjectMapper
 
 
-
-class PullRequestResponse: Mappable {
-
-    var pulls: [Pull]?
-    
-    required init?(map: Map) {}
-    
-    func mapping(map: Map) {
-        pulls <- map
-    }
-    
-    
-}
-
 class Pull: Mappable{
     
     var creator: Creator?

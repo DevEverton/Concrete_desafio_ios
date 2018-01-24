@@ -66,6 +66,8 @@ extension RepositoriesViewController: UITableViewDataSource, UITableViewDelegate
         return repositoryCell
     }
     
+    //Infinite scrolling implementation
+    
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let lastElement = repositories.count - 1
         if indexPath.row == lastElement {
@@ -78,7 +80,7 @@ extension RepositoriesViewController: UITableViewDataSource, UITableViewDelegate
                 self.tableView.reloadData()
                 self.activityIndicator.stopAnimating()
                 }.catch { error -> Void in
-                    
+                    self.activityIndicator.stopAnimating()
             }
             addActivityIndicator(activityIndicator)
             activityIndicator.startAnimating()
