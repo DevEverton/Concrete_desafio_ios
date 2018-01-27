@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 
-class Pull: Mappable{
+class Pull: Mappable {
     
     var creator: Creator?
     var title: String?
