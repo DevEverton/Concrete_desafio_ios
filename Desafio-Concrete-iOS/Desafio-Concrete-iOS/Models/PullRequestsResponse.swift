@@ -16,7 +16,7 @@ class Pull: Mappable {
     var title: String?
     var body: String?
     var date: String?
-    
+    var html_url: String?
     
     required init?(map: Map) {}
     
@@ -25,6 +25,7 @@ class Pull: Mappable {
         title <- map["title"]
         body <- map["body"]
         date <- map["created_at"]
+        html_url <- map["html_url"]
     }
 }
 
