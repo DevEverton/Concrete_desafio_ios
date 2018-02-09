@@ -18,12 +18,13 @@ class RepositoriesViewController: UIViewController {
     var repositories = [Repository]()
     var pullRequestsUrl = String()
     var activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .white)
-    var page = 1
+    var page = 0
     var apiCall = APIManager.shared.fetchRepositoriesOfPage(1)
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(stopAnimate), name: Notification.Name("stopActivityIndicator"), object: nil)
         
         let _ = apiCall.then {
             repositories -> Void in
@@ -31,12 +32,15 @@ class RepositoriesViewController: UIViewController {
             self.tableView.reloadData()
             self.activityIndicator.stopAnimating()
             }.catch { error -> Void in
-                
+                self.activityIndicator.stopAnimating()
             }
         addActivityIndicator(activityIndicator)
         activityIndicator.startAnimating()
 
-        
+    }
+    
+    @objc func stopAnimate() {
+        activityIndicator.stopAnimating()
     }
 
 }
@@ -72,7 +76,8 @@ extension RepositoriesViewController: UITableViewDataSource, UITableViewDelegate
         let lastElement = repositories.count - 1
         if indexPath.row == lastElement {
             
-            apiCall = APIManager.shared.fetchRepositoriesOfPage(page + 1)
+            page += 1
+            apiCall = APIManager.shared.fetchRepositoriesOfPage(page)
             
             let _ = apiCall.then {
                 repositories -> Void in
@@ -87,12 +92,11 @@ extension RepositoriesViewController: UITableViewDataSource, UITableViewDelegate
         }
     }
     
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let destination = storyboard.instantiateViewController(withIdentifier: "PullRequestsVC") as! PullRequestsViewController
 
-        
         if let creator = repositories[indexPath.row].user?.name, let repoName = repositories[indexPath.row].name {
             destination.repoCreator = creator
             destination.repoName = repoName

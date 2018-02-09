@@ -11,12 +11,11 @@ import Alamofire
 import PromiseKit
 import ObjectMapper
 
+
 class APIManager {
     
     static let shared = APIManager()
-    
     private init(){}
-    
     func fetchRepositoriesOfPage(_ page: Int) -> Promise<[Repository]> {
         
         return Promise<[Repository]> {
@@ -26,13 +25,16 @@ class APIManager {
                 switch(response.result) {
                 case .success(let responseString):
                     if let repositoryResponse = RepositoryResponse(JSONString: String(responseString)){
-                        fullfil(repositoryResponse.repositories!)
+                        if let repositories = repositoryResponse.repositories {
+                            fullfil(repositories)
+                        }else {
+                            NotificationCenter.default.post(name: Notification.Name("stopActivityIndicator"), object: self)
+                        }
                     }
                 case .failure(let error):
                     reject(error)
                 }
             }
- 
         }
         
     }
