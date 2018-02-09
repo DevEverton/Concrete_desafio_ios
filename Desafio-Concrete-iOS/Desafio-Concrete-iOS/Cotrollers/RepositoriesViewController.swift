@@ -25,6 +25,8 @@ class RepositoriesViewController: UIViewController {
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(stopAnimate), name: Notification.Name("stopActivityIndicator"), object: nil)
+        addActivityIndicator(activityIndicator)
+        activityIndicator.startAnimating()
         
         let _ = apiCall.then {
             repositories -> Void in
@@ -33,9 +35,9 @@ class RepositoriesViewController: UIViewController {
             self.activityIndicator.stopAnimating()
             }.catch { error -> Void in
                 self.activityIndicator.stopAnimating()
+                self.createAlert(withTitle: "Erro de conexão", message: "Ocorreu um erro ao carregar os dados. Tente novamente mais tarde", actionTitle: "Ok")
             }
-        addActivityIndicator(activityIndicator)
-        activityIndicator.startAnimating()
+        
 
     }
     
@@ -78,6 +80,8 @@ extension RepositoriesViewController: UITableViewDataSource, UITableViewDelegate
             
             page += 1
             apiCall = APIManager.shared.fetchRepositoriesOfPage(page)
+            addActivityIndicator(activityIndicator)
+            activityIndicator.startAnimating()
             
             let _ = apiCall.then {
                 repositories -> Void in
@@ -86,9 +90,8 @@ extension RepositoriesViewController: UITableViewDataSource, UITableViewDelegate
                 self.activityIndicator.stopAnimating()
                 }.catch { error -> Void in
                     self.activityIndicator.stopAnimating()
+                    self.createAlert(withTitle: "Erro de conexão", message: "Ocorreu um erro ao carregar os dados. Tente novamente mais tarde", actionTitle: "Ok")
             }
-            addActivityIndicator(activityIndicator)
-            activityIndicator.startAnimating()
         }
     }
     
@@ -96,13 +99,15 @@ extension RepositoriesViewController: UITableViewDataSource, UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let destination = storyboard.instantiateViewController(withIdentifier: "PullRequestsVC") as! PullRequestsViewController
-
+        
         if let creator = repositories[indexPath.row].user?.name, let repoName = repositories[indexPath.row].name {
             destination.repoCreator = creator
             destination.repoName = repoName
         }
         
+        tableView.deselectRow(at: indexPath, animated: false)
         self.navigationController?.pushViewController(destination, animated: true)
     }
     
+
 }

@@ -29,16 +29,21 @@ class PullRequestsViewController: UIViewController {
         
                 
         let apiCall = APIManager.shared.fetchPullRequestsOf(repoName, by: repoCreator)
+        addActivityIndicator(activityIndicator)
+        activityIndicator.startAnimating()
+        
         let _ = apiCall.then {
             pullRequests -> Void in
             self.pullRequests = pullRequests
             self.tableView.reloadData()
             self.activityIndicator.stopAnimating()
-            }.catch { error -> Void in
-                
+            if self.pullRequests.isEmpty {
+                self.createAlertWithDismiss(withTitle: "Lista vazia", message: "Não existem pull requests em aberto para este repositório.", actionTitle: "Ok")
             }
-        addActivityIndicator(activityIndicator)
-        activityIndicator.startAnimating()
+            }.catch { error -> Void in
+                self.activityIndicator.stopAnimating()
+                self.createAlert(withTitle: "Erro de conexão", message: "Ocorreu um erro ao carregar os dados. Tente novamente mais tarde", actionTitle: "Ok")
+            }
     }
 
 }
@@ -68,29 +73,42 @@ extension PullRequestsViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("PULLURL HERE: ", pullRequests[indexPath.row].html_url ?? "nil")
-        let pullUrl = URL(string: pullRequests[indexPath.row].html_url!)
-        let safariVC = SFSafariViewController(url: pullUrl!)
-        safariVC.view.tintColor = UIColor(red:0.19, green:0.50, blue:0.80, alpha:1.0)
-        safariVC.delegate = self
-        self.present(safariVC, animated: true, completion: nil)
+        if let pullUrl = URL(string: pullRequests[indexPath.row].html_url!) {
+            let safariVC = SFSafariViewController(url: pullUrl)
+            
+            if #available(iOS 10.0, *) {
+                safariVC.preferredControlTintColor = UIColor(red:0.20, green:0.20, blue:0.22, alpha:1.0)
+            } else {
+                safariVC.view.tintColor = UIColor(red:0.20, green:0.20, blue:0.22, alpha:1.0)
+            }
+            safariVC.delegate = self
+            self.present(safariVC, animated: true, completion: nil)
+        }
+        
+        tableView.deselectRow(at: indexPath, animated: false)
     }
     
     func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
         controller.dismiss(animated: true, completion: nil)
     }
     
-    //TODO: Format date for older versions of ios
-    
+
     func formatDate(of dateString: String) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "E, d MMM yyyy HH:mm"
-        if #available(iOS 10.0, *) {
-            let dateFormatter = ISO8601DateFormatter()
-            let date = dateFormatter.date(from: dateString)
-            return formatter.string(from: date!)
+        let isoFormatter = DateFormatter()
+        isoFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        isoFormatter.locale = Locale(identifier: "en_US_POSIX")
+        
+        if let date = isoFormatter.date(from: dateString) {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "EEE, MMM d, yyyy hh:mm a"
+            formatter.locale = Locale(identifier: "pt_BR")
+            formatter.timeZone = TimeZone(identifier: "UTC")
+            let result = formatter.string(from:date)
+            
+            return result
         }
         return dateString
+
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
