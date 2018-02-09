@@ -18,7 +18,7 @@ class RepositoriesViewController: UIViewController {
     var repositories = [Repository]()
     var pullRequestsUrl = String()
     var activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .white)
-    var page = 0
+    var page = 1
     var apiCall = APIManager.shared.fetchRepositoriesOfPage(1)
     
     override func viewDidLoad() {
